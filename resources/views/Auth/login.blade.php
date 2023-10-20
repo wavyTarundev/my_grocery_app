@@ -25,13 +25,19 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form action= "{{'doLogin'}}" method="post" >
+            @if (Session::has('error'))
+                <div class="alert alert-danger">
+                    {{Session::get('error')}}
+                </div>
+            @endif
+            <form action= "{{'doLogin'}}" method="post" > 
               <h1>Login Form</h1>
+              @csrf
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="text" class="form-control" placeholder="Username" name="email" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" class="form-control" placeholder="Password" name="password" required="" />
               </div>
               <div>
                 <button type="submit" class="btn btn-primary">Login</button>
