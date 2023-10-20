@@ -11,4 +11,8 @@ class AuthController extends Controller
     public function doLogin(){
         //print_r('hello');
     }
+
+    public function admin(){
+        return view('auth/admin');
+    }
 }
