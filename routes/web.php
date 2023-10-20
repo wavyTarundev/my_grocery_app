@@ -16,3 +16,4 @@ Route::get('/welcome', function () {
 });
 Route::get('/', [AuthController::class, 'login']);
 Route::post('/doLogin', [AuthController::class, 'doLogin']);
+Route::get('/admin', [AuthController::class, 'admin']);
